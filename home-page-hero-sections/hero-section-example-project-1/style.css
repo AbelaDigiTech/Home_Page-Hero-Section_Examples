@@ -1,0 +1,246 @@
+/* Base styles (for larger screens like desktops) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background: var(--dark-background, #181818);
+    color: #FFF;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    padding: 15px 20px;
+}
+
+.nav-logo img {
+    max-width: 150px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+.nav-sign-up {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nav-sign-up a {
+    color: white;
+    text-decoration: none;
+    background-color: #007bff;
+}
+
+.hero-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hero-sect h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero-sect h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Flexbox for Form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Spacing between email input and button */
+    margin-bottom: 10px; /* Reduced margin to make space for h6 */
+}
+
+form input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    width: 250px;
+}
+
+form button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Align h6 to the left relative to the form */
+.hero-sect h6 {
+    align-self: flex-start;
+    margin-left: calc(50% - 130px); /* Approximation to match form start, adjust as necessary */
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 0;
+}
+
+.hero-img img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 30px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #555;
+}
+
+footer p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer p a:hover {
+    text-decoration: underline;
+}
+
+h6 {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .hero-sect h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-sect h2 {
+        font-size: 1.2em;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    form input[type="email"],
+    form button[type="submit"] {
+        width: 100%;
+    }
+
+    .hero-sect h6 {
+        margin-left: 0; /* Align h6 to the start of the container */
+        text-align: center;
+    }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .navbar ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .hero-sect h1 {
+        font-size: 2em;
+    }
+
+    .hero-sect h2 {
+        font-size: 1.5em;
+    }
+
+    form input[type="email"],
+    form button[type="submit"] {
+        width: auto;
+    }
+
+    .hero-sect h6 {
+        margin-left: 10%;
+    }
+}
+
+/* Desktops (769px and above) */
+@media (min-width: 769px) {
+    .navbar ul {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .hero-sect h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-sect h2 {
+        font-size: 1.8em;
+    }
+
+    form input[type="email"],
+    form button[type="submit"] {
+        width: auto;
+    }
+
+    .hero-sect h6 {
+        margin-left: calc(50% - 130px); /* Align h6 to match form start */
+    }
+}
